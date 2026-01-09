@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>High Level Scientific Calculator</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="wrapper">
+
+  <div class="calc">
+    <div class="top">
+      <div class="mode" id="mode">DEG</div>
+      <button class="icon" onclick="toggleHistory()">🕒</button>
+    </div>
+
+    <div class="expression" id="expr"></div>
+    <div class="result" id="res"></div>
+
+    <div class="buttons">
+      <button onclick="toggleDeg()">DEG</button>
+      <button onclick="trig('sin')">sin</button>
+      <button onclick="trig('cos')">cos</button>
+      <button onclick="trig('tan')">tan</button>
+      <button onclick="clearAll()">C</button>
+
+      <button onclick="math('sqrt')">√</button>
+      <button onclick="math('pow2')">x²</button>
+      <button onclick="math('pow3')">x³</button>
+      <button onclick="math('log')">log</button>
+      <button onclick="math('ln')">ln</button>
+
+      <button onclick="num(7)">7</button>
+      <button onclick="num(8)">8</button>
+      <button onclick="num(9)">9</button>
+      <button class="op" onclick="operator('÷')">÷</button>
+      <button onclick="math('pi')">π</button>
+
+      <button onclick="num(4)">4</button>
+      <button onclick="num(5)">5</button>
+      <button onclick="num(6)">6</button>
+      <button class="op" onclick="operator('×')">×</button>
+      <button onclick="math('e')">e</button>
+
+      <button onclick="num(1)">1</button>
+      <button onclick="num(2)">2</button>
+      <button onclick="num(3)">3</button>
+      <button class="op" onclick="operator('-')">−</button>
+      <button onclick="del()">⌫</button>
+
+      <button onclick="num(0)">0</button>
+      <button onclick="num('.')">.</button>
+      <button class="op" onclick="operator('+')">+</button>
+      <button class="equal" style="grid-column: span 2" onclick="equal()">=</button>
+    </div>
+  </div>
+
+  <!-- HISTORY -->
+  <div class="history" id="historyBox">
+    <div class="history-header">
+      <span>Riwayat</span>
+      <button class="icon" style="width:28px;height:28px" onclick="clearHistory()">🗑</button>
+    </div>
+    <div class="history-list" id="historyList"></div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.wrapper { position: relative; }
+
+.calc {
+  width: 380px;
+  padding: 26px;
+  background: linear-gradient(180deg, rgba(2,6,23,.9), rgba(2,6,23,.75));
+  backdrop-filter: blur(14px);
+  border-radius: 30px;
+  box-shadow: 0 30px 60px rgba(0,0,0,.7);
+}
+
+/* TOP */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.mode {
+  font-size: 14px;
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+.icon {
+  background: linear-gradient(135deg, #38bdf8, #06b6d4);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #020617;
+  font-size: 16px;
+}
+
+/* DISPLAY */
+.expression {
+  text-align: right;
+  font-size: 38px;
+  min-height: 54px;
+  font-weight: 600;
+}
+
+.result {
+  text-align: right;
+  font-size: 18px;
+  color: #94a3b8;
+  min-height: 24px;
+  margin-bottom: 18px;
+}
+
+/* GRID */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+button {
+  height: 56px;
+  border-radius: 16px;
+  border: none;
+  font-size: 16px;
+  background: #020617;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0,0,0,.6);
+  transition: .15s;
+}
+
+button:hover { transform: translateY(-2px); }
+button:active { transform: scale(.94); }
+
+.op { color: #38bdf8; font-size: 18px; }
+
+.equal {
+  background: linear-gradient(135deg, #38bdf8, #06b6d4);
+  color: #020617;
+  font-size: 22px;
+}
+
+/* HISTORY */
+.history {
+  position: absolute;
+  top: 0;
+  right: -300px;
+  width: 280px;
+  height: 100%;
+  padding: 16px;
+  background: #020617;
+  border-radius: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: .3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.history.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #38bdf8;
+}
+
+.history-list {
+  overflow-y: auto;
+  flex: 1;
+}
+
+.history-item {
+  background: rgba(255,255,255,.05);
+  padding: 8px;
+  border-radius: 10px;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
